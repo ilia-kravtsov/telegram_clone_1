@@ -4,6 +4,7 @@ import {Button, TextField, IconButton} from "@mui/material";
 import { Delete } from '@mui/icons-material'
 import {v1} from "uuid";
 import {useAutoAnimate} from "@formkit/auto-animate/react";
+import EditableSpan from "./EditableSpan";
 
 export type listItemType = {
     id: string
@@ -42,6 +43,10 @@ function App() {
     const deleteLi = (id: string) => {
         setLists(list.filter(li => li.id !== id))
     }
+    const onSpanChgCB = (newTitle: string, id: string) => {
+        list.map(li => li.id === id ? li.liText = newTitle : li)
+        setLists([...list])
+    }
 
     return (
     <div className={s.App}>
@@ -65,9 +70,12 @@ function App() {
                   ? list.map(objMess => {
 
                       const deleteLiCallBack = () => deleteLi(objMess.id)
+                      const onSpanChangeCB = (newTitle: string) => {
+                          onSpanChgCB(newTitle, objMess.id)
+                      }
 
                       return <li key={objMess.id}>
-                          <span>{objMess.liText}</span>
+                          <EditableSpan title={objMess.liText} onSpanChangeCB={onSpanChangeCB}/>
                           <IconButton onClick={deleteLiCallBack}><Delete/></IconButton>
                       </li>
                   })
