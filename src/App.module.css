@@ -1,0 +1,68 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  font-family: Lora serif;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  min-height: 600px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.inpBtns {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ul {
+  list-style: none;
+  margin: 25px 0 190px 0;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 180px;
+}
+
+li {
+  margin-top: 10px;
+  box-shadow: 3px 3px 10px;
+  border-radius: 10px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  word-wrap: break-word;
+}
+
+li > span {
+  margin-top: 7px;
+  margin-left: 10px;
+  word-wrap: break-word;
+}
+
+.errorText {
+  height: 40px;
+  margin-top: 20px;
+  color: red;
+  font-size: 20px;
+}
+
+.reserveSpan {
+  margin-top: 5px;
+  box-shadow: 5px 5px 10px;
+  border-radius: 10px;
+  padding: 5px;
+}
